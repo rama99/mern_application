@@ -1,12 +1,15 @@
 const express = require(`express`);
-
-// route files
-const bootcamps = require(`./routes/bootcamps`);
+const logger = require(`./middleware/logger`);
+const morgan = require(`morgan`);
+const colors = require(`colors`);
+const connectDB = require(`./config/db`);
 
 require(`dotenv`).config({path: `./config/config.env`}); // for environment variables
 
-const logger = require(`./middleware/logger`);
-const morgan = require(`morgan`);
+connectDB();
+
+// route files
+const bootcamps = require(`./routes/bootcamps`);
 
 const app = express();
 
@@ -23,6 +26,18 @@ app.get("/" , (req , res) => {
     res.sendStatus(400);
 })
 
-app.listen(process.env.PORT || 5000 , () => {
-    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${process.env.PORT}`)
+app.use( (err , req , res , next) => {
+    console.log(`Error ===========================> ${err}`);
+    //process.exit(1);
+})
+
+const server = app.listen(process.env.PORT || 5000 , () => {
+    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${process.env.PORT}`.yellow.bold)
 });
+
+// Handle unhandled promise rejection
+process.on(`unhandledRejection`, (err, promise) => {
+    console.log(`Error =====> ${err.message}`.red);
+    // close server and exit process
+    server.close(() => process.exit(1));
+})
