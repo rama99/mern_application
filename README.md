@@ -11,7 +11,6 @@ Rename "config/config.env.env" to "config/config.env" and update the values/sett
 
 npm install
 ...
-
 ## Run Application
 ...
 
