@@ -26,6 +26,7 @@ npm start
 ## Database Seeder
 >To seed the database with users, bootcamps, courses and reviews with data from the "_data" folder, run
 
+
 # Destroy all data
 ```
 node seeder -d
