@@ -1,5 +1,10 @@
 import React from 'react';
 
+import Bootcamp from '../../components/bootcamp/bootcamp.component';
+import BootcampsList from '../../components/bootcamps-list/bootcamps-list.component';
+import BootcampsByLocation from '../../components/bootcamps-by-location/bootcamps-by-location.component';
+import BootcampFilter from '../../components/bootcamp-filter/bootcamp-filter.component';
+
 class BootcampsPage extends React.Component {
 
     render() {
@@ -8,6 +13,7 @@ class BootcampsPage extends React.Component {
         <div className="container">
             <div className="row">               
                 <div className="col-md-4">
+                    <BootcampsByLocation/>
                     <div className="card card-body mb-4">
                         <h4 className="mb-3">By Location</h4>
                         <form>
@@ -40,7 +46,7 @@ class BootcampsPage extends React.Component {
                             />
                         </form>
                     </div>
-
+                    <BootcampFilter/>
                     <h4>Filter</h4>
                     <form>
                        /* <div className="form-group">
@@ -92,32 +98,12 @@ class BootcampsPage extends React.Component {
                     </form>
                 </div>
                 
-                <div className="col-md-8">
-                   
-                    <div className="card mb-3">
-                        <div className="row no-gutters">
-                            <div className="col-md-4">
-                                <img src="img/image_1.jpg" className="card-img" alt="..." />
-                            </div>
-                            <div className="col-md-8">
-                                <div className="card-body">
-                                    <h5 className="card-title">
-                                        <a href="bootcamp.html"
-                                            >Devworks Bootcamp
-                                            <span className="float-right badge badge-success"
-                                                >8.8</span
-                                            ></a
-                                        >
-                                    </h5>
-                                    <span className="badge badge-dark mb-2">Boston, MA</span>
-                                    <p className="card-text">
-                                        Web Development, UI/UX, Mobile Development
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                
 
+
+                <div className="col-md-8">                  
+                    
+                <BootcampsList/>
                     <div className="card mb-3">
                         <div className="row no-gutters">
                             <div className="col-md-4">
@@ -141,29 +127,7 @@ class BootcampsPage extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="card mb-3">
-                        <div className="row no-gutters">
-                            <div className="col-md-4">
-                                <img src="img/image_3.jpg" className="card-img" alt="..." />
-                            </div>
-                            <div className="col-md-8">
-                                <div className="card-body">
-                                    <h5 className="card-title">
-                                        <a href="bootcamp.html"
-                                            >Codemasters
-                                            <span className="float-right badge badge-success"
-                                                >9.2</span
-                                            ></a
-                                        >
-                                    </h5>
-                                    <span className="badge badge-dark mb-2">Burlington, VT</span>
-                                    <p className="card-text">
-                                        Web Development, Data Science, Marketing
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
 
                     <div className="card mb-3">
                         <div className="row no-gutters">
