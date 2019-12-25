@@ -7,6 +7,8 @@ import HomePage from './pages/homepage/homepage.component';
 import LoginPage from './pages/login/login.component';
 import RegisterPage from './pages/register/register.component';
 import BootcampsPage from './pages/bootcamps/bootcamps.component';
+import BootcampDetailsPage from './pages/bootcamp-details/bootcamp-details.component';
+
 import Header from './components/header/header.component';
 
 import {Provider} from 'react-redux';
@@ -24,7 +26,9 @@ function App() {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/register" component={RegisterPage} />
-            <Route exact path="/bootcamps" component={BootcampsPage} />        
+            <Route exact path="/bootcamps" component={BootcampsPage} /> 
+            <Route exact path="/bootcampdetails/:id" component={BootcampDetailsPage} />        
+
           </PersistGate>
         </div>
       </BrowserRouter>

@@ -1,14 +1,7 @@
 import React from 'react';
 
 class HomePage extends React.Component {
-
-    constructor() {
-        super();
-    }
-
-    componentDidMount() {
-        
-    }
+   
 
     render() {
         return (
@@ -45,7 +38,7 @@ class HomePage extends React.Component {
 						<input
 							type="submit"
 							value="Find Bootcamps"
-							class="btn btn-primary btn-block"
+							className="btn btn-primary btn-block"
 						/>
 					</form>
 				</div>

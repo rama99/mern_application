@@ -7,7 +7,7 @@ class BootcampFilter extends React.Component {
             <Fragment>
             <h4>Filter</h4>
                     <form>
-                       /* <div className="form-group">
+                       <div className="form-group">
                             <label> Career</label>
                             <select className="custom-select mb-2">
                                 <option value="any" selected>Any</option>
@@ -18,7 +18,7 @@ class BootcampFilter extends React.Component {
                                 <option value="Business">Business</option>
                                 <option value="Other">Other</option>
                             </select>
-                        </div> */
+                        </div> 
 
                         <div className="form-group">
                             <label> Rating</label>

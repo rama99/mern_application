@@ -6,53 +6,53 @@ class Header extends React.Component {
     render() {
         return (
           
-		<nav class="navbar navbar-expand-md navbar-dark bg-primary">
-			<div class="container">
-				<a class="navbar-brand" href="index.html"
-					><i class="fas fa-laptop-code"></i> DevCamper</a
+		<nav className="navbar navbar-expand-md navbar-dark bg-primary">
+			<div className="container">
+				<a className="navbar-brand" href="index.html"
+					><i className="fas fa-laptop-code"></i> DevCamper</a
 				>
 				<button
-					class="navbar-toggler"
+					className="navbar-toggler"
 					type="button"
 					data-toggle="collapse"
 					data-target="#navbarSupportedContent"
 				>
-					<span class="navbar-toggler-icon"></span>
+					<span className="navbar-toggler-icon"></span>
 				</button>
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item dropdown">
+				<div className="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul className="navbar-nav ml-auto">
+						<li className="nav-item dropdown">
 							<a
-								class="nav-link dropdown-toggle"
+								className="nav-link dropdown-toggle"
 								href="#"
 								id="navbarDropdown"
 								role="button"
 								data-toggle="dropdown"
 							>
-								<i class="fas fa-user"></i> Account
+								<i className="fas fa-user"></i> Account
 							</a>
-							<div class="dropdown-menu">
-								<a class="dropdown-item" href="manage-bootcamp.html"
+							<div className="dropdown-menu">
+								<a className="dropdown-item" href="manage-bootcamp.html"
 									>Manage Bootcamp</a
 								>
-								<a class="dropdown-item" href="manage-reviews.html"
+								<a className="dropdown-item" href="manage-reviews.html"
 									>Manage Reviews</a
 								>
-								<a class="dropdown-item" href="manage-account.html"
+								<a className="dropdown-item" href="manage-account.html"
 									>Manage Account</a
 								>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="login.html"
-									><i class="fas fa-sign-out-alt"></i> Logout</a
+								<div className="dropdown-divider"></div>
+								<a className="dropdown-item" href="login.html"
+									><i className="fas fa-sign-out-alt"></i> Logout</a
 								>
 							</div>
 						</li>
-						<li class="nav-item d-none d-sm-block">
-							<a class="nav-link" href="#">|</a>
+						<li className="nav-item d-none d-sm-block">
+							<a className="nav-link" href="#">|</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="bootcamps.html">Browse Bootcamps</a>
+						<li className="nav-item">
+							<a className="nav-link" href="bootcamps.html">Browse Bootcamps</a>
 						</li>
 					</ul>
 				</div>

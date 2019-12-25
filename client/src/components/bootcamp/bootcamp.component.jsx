@@ -1,9 +1,13 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
-class Bootcamp extends React.Component {
-
+class Bootcamp extends React.Component {   
 
     render() {
+
+        const {_id , name , averageRating , location: {city , state}} =  this.props.data;
+        
+
         return (
             <div className="card mb-3">
                         <div className="row no-gutters">
@@ -13,14 +17,13 @@ class Bootcamp extends React.Component {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <h5 className="card-title">
-                                        <a href="bootcamp.html"
-                                            >Devworks Bootcamp COMPONENT
+                                        <Link to={`./bootcampdetails/${_id}`}>
+                                            {name}
                                             <span className="float-right badge badge-success"
-                                                >8.8</span
-                                            ></a
-                                        >
+                                                >{averageRating}</span>
+                                        </Link>                                        
                                     </h5>
-                                    <span className="badge badge-dark mb-2">Boston, MA</span>
+                                    <span className="badge badge-dark mb-2">{city},{state}</span>
                                     <p className="card-text">
                                         Web Development, UI/UX, Mobile Development
                                     </p>
@@ -32,4 +35,4 @@ class Bootcamp extends React.Component {
     }
 }
 
-export default Bootcamp
+export default Bootcamp;
