@@ -1,4 +1,10 @@
-export const BootcampActionTypes = {
-    ADD_BOOTCAMP: 'ADD_BOOTCAMP'
+const BootcampActionTypes = {
+
+    FETCH_BOOTCAMPS_START: "FETCH_BOOTCAMPS_START",
+    FETCH_BOOTCAMPS_SUCCESS: "FETCH_BOOTCAMPS_SUCCESS",
+    FETCH_BOOTCAMPS_FAILURE: "FETCH_BOOTCAMPS_FAILURE"
 }
+
+
+export default BootcampActionTypes;
 

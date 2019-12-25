@@ -1,11 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Bootcamp from '../../components/bootcamp/bootcamp.component';
 import BootcampsList from '../../components/bootcamps-list/bootcamps-list.component';
 import BootcampsByLocation from '../../components/bootcamps-by-location/bootcamps-by-location.component';
 import BootcampFilter from '../../components/bootcamp-filter/bootcamp-filter.component';
 
+import {fetchBootcampsAsync} from '../../redux/bootcamp/bootcamp.actions';
+
 class BootcampsPage extends React.Component {
+
+    componentDidMount() {
+        this.props.fetchBootcampsAsync();
+    }
 
     render() {
 
@@ -177,5 +184,9 @@ class BootcampsPage extends React.Component {
 
 }
 
+const mapDispatchToProps = (dispatch) => ({    
+    fetchBootcampsAsync: () => dispatch(fetchBootcampsAsync())
+})
 
-export default BootcampsPage;
+
+export default connect(null,mapDispatchToProps)(BootcampsPage);

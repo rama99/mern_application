@@ -8,7 +8,8 @@ import bootcampReducer from './bootcamp/bootcamp.reducer';
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist:['cart']
+   // whitelist:['cart']
+   whitelist:[]
 }
 
 const rootReducer = combineReducers({
