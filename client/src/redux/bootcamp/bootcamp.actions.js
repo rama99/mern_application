@@ -22,9 +22,9 @@ export const fetchBootcampsAsync =  () => {
 
         try {
             dispatch(fetchBootcampsStart())
-            const data = await axios.get(`/api/v1/bootcamps`);
-            console.log( data);
-            dispatch(fetchBootcampsSuccess(data));
+            const response = await axios.get(`/api/v1/bootcamps`);
+            console.log( response.data);
+            dispatch(fetchBootcampsSuccess(response.data));
             console.log(`SUCCESS`);
         }
         catch(error) {

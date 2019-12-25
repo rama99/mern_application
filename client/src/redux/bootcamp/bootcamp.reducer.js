@@ -3,7 +3,7 @@ import BootcampActionTypes from "./bootcamp.types";
 const INITIAL_STATE = {
     bootcamps: [],
     isFetching: false,
-    paging:{},
+    pagination:undefined,
     errorMessage:undefined    
 }
 
@@ -17,7 +17,8 @@ const bootcampReducer  = (state = INITIAL_STATE , action) => {
         case BootcampActionTypes.FETCH_BOOTCAMPS_SUCCESS:
             return {
                 ...state,
-                bootcamps:action.payload,
+                bootcamps:action.payload.data,
+                pagination:action.payload.pagination,
                 isFetching: false
             } 
         case BootcampActionTypes.FETCH_BOOTCAMPS_FAILURE:
