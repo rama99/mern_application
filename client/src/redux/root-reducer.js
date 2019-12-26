@@ -3,6 +3,7 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import bootcampReducer from './bootcamp/bootcamp.reducer';
+import authReducer from './auth/auth.reducer';
 
 
 const persistConfig = {
@@ -13,7 +14,8 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    bootcamp: bootcampReducer
+    bootcamp: bootcampReducer,
+    auth: authReducer
 })
 
 export default persistReducer(persistConfig , rootReducer);

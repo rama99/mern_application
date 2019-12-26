@@ -19,7 +19,7 @@ export class BootcampsList extends React.Component {
             <Fragment>
                
                    {
-                      bootcamps.map(bootcamp => <Bootcamp data={bootcamp} />) 
+                      bootcamps.map(bootcamp => <Bootcamp key={bootcamp._id} data={bootcamp} />) 
                    }                    
                     
                    <Pagination/>

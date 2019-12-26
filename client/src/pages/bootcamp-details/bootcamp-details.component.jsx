@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import BootcampDetails from '../../components/bootcamp-details/bootcamp-details.component';
 
 class BootcampDetailsPage extends React.Component {
 
@@ -7,10 +9,12 @@ render() {
     console.log(`PROPS`);
     console.log(this.props);
     return (
-        <h2>Coming soon Bootcamp details page - {this.props.match.params.id}</h2>
+    <section className="bootcamp mt-5">
+	   <BootcampDetails/>
+    </section>   
     )
 }
 
 }
 
-export default BootcampDetailsPage;
+export default withRouter(BootcampDetailsPage);
