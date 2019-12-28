@@ -1,6 +1,23 @@
 import React , {Fragment} from 'react';
+import {connect} from 'react-redux';
+import {fetchBootcampsByFilterAsync} from '../../redux/bootcamp/bootcamp.actions';
 
 class BootcampFilter extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            career:null,
+            rating:null,
+            budget:null
+        }
+    }
+
+    handleChange = (event) => {
+        const { name , value } = event.target;
+        this.setState({[name] : value});        
+    }
 
     render() {
         return (
@@ -9,7 +26,7 @@ class BootcampFilter extends React.Component {
                     <form>
                        <div className="form-group">
                             <label> Career</label>
-                            <select className="custom-select mb-2">
+                            <select name="career" className="custom-select mb-2">
                                 <option value="any" selected>Any</option>
                                 <option value="Web Development">Web Development</option>
                                 <option value="Mobile Development">Mobile Development</option>
@@ -22,7 +39,7 @@ class BootcampFilter extends React.Component {
 
                         <div className="form-group">
                             <label> Rating</label>
-                            <select className="custom-select mb-2">
+                            <select name="rating" className="custom-select mb-2">
                                 <option value="any" selected>Any</option>
                                 <option value="9">9+</option>
                                 <option value="8">8+</option>
@@ -37,7 +54,7 @@ class BootcampFilter extends React.Component {
 
                         <div className="form-group">
                             <label> Budget</label>
-                            <select className="custom-select mb-2">
+                            <select name="budget"  className="custom-select mb-2">
                                 <option value="any" selected>Any</option>
                                 <option value="20000">$20,000</option>
                                 <option value="15000">$15,000</option>
@@ -60,4 +77,8 @@ class BootcampFilter extends React.Component {
 
 }
 
-export default BootcampFilter;
+const mapDispatchToProps = dispatch => ({
+    fetchBootcampsByFilterAsync: dispatch(fetchBootcampsByFilterAsync)
+})
+
+export default connect(null , mapDispatchToProps)(BootcampFilter);

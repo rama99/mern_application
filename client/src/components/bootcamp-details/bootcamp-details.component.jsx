@@ -73,7 +73,7 @@ class BootcampDetails extends React.Component {
 
 }
 
-const mapStateToProps = ({bootcamp:{bootcamps}}) => {   
+const mapStateToProps = ({bootcampState:{bootcamps}}) => {   
    return ({
  bootcamp: bootcamps.find((b) => b._id === `5d725a1b7b292f5f8ceff788`)
 })

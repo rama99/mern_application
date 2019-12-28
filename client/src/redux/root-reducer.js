@@ -14,8 +14,8 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    bootcamp: bootcampReducer,
-    auth: authReducer
+    bootcampState: bootcampReducer,
+    authState: authReducer
 })
 
 export default persistReducer(persistConfig , rootReducer);
