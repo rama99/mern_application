@@ -1,30 +1,24 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
+
+import {logout} from '../../redux/auth/auth.actions';
 
 class Header extends React.Component {
 
+	onLogout = () => {		
+		this.props.logout();
+		this.props.history.push(`/`);	
+	}
     
     render() {
-        return (
-          
-		<nav className="navbar navbar-expand-md navbar-dark bg-primary">
-			<div className="container">
-				{/*<a className="navbar-brand" href="index.html"
-					><i className="fas fa-laptop-code"></i> DevCamper</a
-				>*/}
-				<Link to="/" className="navbar-brand"><i className="fas fa-laptop-code"></i> DevCamper</Link>
-				<button
-					className="navbar-toggler"
-					type="button"
-					data-toggle="collapse"
-					data-target="#navbarSupportedContent"
-				>
-					<span className="navbar-toggler-icon"></span>
-				</button>
 
-				<div className="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul className="navbar-nav ml-auto">
-						<li className="nav-item dropdown">
+		const {user} = this.props;
+
+		const links  = user ?  (
+				<Fragment>
+					<li className="nav-item dropdown">
 							<a
 								className="nav-link dropdown-toggle"
 								href="#"
@@ -45,16 +39,43 @@ class Header extends React.Component {
 									>Manage Account</a
 								>
 								<div className="dropdown-divider"></div>
-								<a className="dropdown-item" href="login.html"
-									><i className="fas fa-sign-out-alt"></i> Logout</a
-								>
+								<Link className="dropdown-item" onClick={this.onLogout}
+									><i className="fas fa-sign-out-alt"></i> Logout
+								</Link>
 							</div>
 						</li>
 						<li className="nav-item d-none d-sm-block">
 							<a className="nav-link" href="#">|</a>
 						</li>
-						<li className="nav-item">
-							{ /* <a className="nav-link" href="bootcamps.html">Browse Bootcamps</a> */}
+				</Fragment>
+			): (
+				<li className="nav-item">							
+							<Link className="nav-link" to="/login">Login</Link>
+				</li>
+			);
+
+        return (
+          
+		<nav className="navbar navbar-expand-md navbar-dark bg-primary">
+			<div className="container">
+				
+				<Link to="/" className="navbar-brand"><i className="fas fa-laptop-code"></i> DevCamper</Link>
+				<button
+					className="navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+				>
+					<span className="navbar-toggler-icon"></span>
+				</button>
+
+				<div className="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul className="navbar-nav ml-auto">
+					
+						{links}					
+
+
+						<li className="nav-item">							
 							<Link className="nav-link" to="/bootcamps">Browse Bootcamps</Link>
 						</li>
 					</ul>
@@ -66,4 +87,12 @@ class Header extends React.Component {
 
 }
 
-export default Header
+const mapStateToProps = ({authState:{user}}) => ({
+	user
+})
+
+const mapDispatchToProps = dispatch => ({
+	logout: () => dispatch(logout())
+})
+
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Header));

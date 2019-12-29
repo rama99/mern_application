@@ -19,11 +19,16 @@ class BootcampFilter extends React.Component {
         this.setState({[name] : value});        
     }
 
+    getBootcampsByFilter = (event) => {
+        console.log(`getBootcampsByFilter`);
+        event.preventDefault();        
+    }
+
     render() {
         return (
             <Fragment>
             <h4>Filter</h4>
-                    <form>
+                    <form onSubmit={(e) => this.getBootcampsByFilter(e)}>
                        <div className="form-group">
                             <label> Career</label>
                             <select name="career" className="custom-select mb-2">

@@ -1,5 +1,8 @@
 import React from 'react';
 import {BrowserRouter , Route, Switch, Redirect } from 'react-router-dom';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -30,6 +33,7 @@ function App() {
             <Route exact path="/bootcampdetails/:id" component={BootcampDetailsPage} />        
 
           </PersistGate>
+          <ToastContainer autoClose={2000} />
         </div>
       </BrowserRouter>
     </Provider>

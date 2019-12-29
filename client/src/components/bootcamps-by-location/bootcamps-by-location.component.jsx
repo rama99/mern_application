@@ -8,8 +8,8 @@ class BootcampsByLocation extends React.Component {
         super(props);
 
         this.state = {
-            zipcode:0,
-            distance:0
+            zipcode:null,
+            distance:null
         }        
     }
 
@@ -22,6 +22,7 @@ class BootcampsByLocation extends React.Component {
         event.preventDefault();        
         this.props.fetchBootcampsByLocationAsync(this.state);
         console.log(`GET BOOTCAMPS BY LOCATION`);
+        this.setState({zipcode:`` , distance:``});       
     }
 
     render() {
@@ -75,4 +76,4 @@ const mapDispatchToProps = dispatch => ({
     fetchBootcampsByLocationAsync: (query) => dispatch(fetchBootcampsByLocationAsync(query))
 })
 
-export default connect(mapStateToProps , mapDispatchToProps)(BootcampsByLocation)
+export default  connect(mapStateToProps , mapDispatchToProps)(BootcampsByLocation)
