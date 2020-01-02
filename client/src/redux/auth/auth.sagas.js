@@ -13,12 +13,12 @@ export function * login({payload: {email , password}}) {
         });
 
         // console.log(data);
-        yield put(loginSuccess(data.data.token));
-        toast.success("MY SUCCESS");
+        yield put(loginSuccess(data.data.token));       
 
     }
     catch(error){
         yield put(loginFailure(error.message));
+        toast.error(error.message);
     }
 
 }

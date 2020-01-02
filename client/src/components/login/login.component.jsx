@@ -12,16 +12,8 @@ class Login extends React.Component {
 			email:null,
 			password:null
 		}
-	}
+	}	
 	
-	componentDidMount() {
-
-		const {user , history} = this.props;
-
-		/*if(user){
-			history.push(`/`);
-		}*/
-	}
 	
 	handleChange = (event) => {
         const { name , value } = event.target;
@@ -29,15 +21,28 @@ class Login extends React.Component {
 	}
 	
 	loginClick = (event) => {
-		console.log(`loginClick`);
-		event.preventDefault();
-		console.log(this.state);
-		this.props.loginStart(this.state);
-		this.setState({email:``,password:``});
-		//this.props.history.push(`/`);
+		
+		
+		try {
+			event.preventDefault();
+			console.log(this.state);
+			this.props.loginStart(this.state);
+			this.setState({email:``,password:``});
+		}
+		catch(err) {
+
+		}		
+		
 	}
 
     render() {
+
+		const {user , history} = this.props;
+		
+		if(user) {
+			this.props.history.push(`/`);
+		} 
+
         return (
             <div className="card bg-white p-4 mb-4">
 							<div className="card-body">

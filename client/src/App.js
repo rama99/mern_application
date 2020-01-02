@@ -11,6 +11,7 @@ import LoginPage from './pages/login/login.component';
 import RegisterPage from './pages/register/register.component';
 import BootcampsPage from './pages/bootcamps/bootcamps.component';
 import BootcampDetailsPage from './pages/bootcamp-details/bootcamp-details.component';
+import ReviewsPage from './pages/reviews/reviews.component';
 
 import Header from './components/header/header.component';
 
@@ -30,7 +31,8 @@ function App() {
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/register" component={RegisterPage} />
             <Route exact path="/bootcamps" component={BootcampsPage} /> 
-            <Route exact path="/bootcampdetails/:id" component={BootcampDetailsPage} />        
+            <Route exact path="/bootcampdetails/:id" component={BootcampDetailsPage} />  
+            <Route exact path="/reviews/:id" component={ReviewsPage} />       
 
           </PersistGate>
           <ToastContainer autoClose={2000} />

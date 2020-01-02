@@ -4,18 +4,20 @@ import storage from 'redux-persist/lib/storage';
 
 import bootcampReducer from './bootcamp/bootcamp.reducer';
 import authReducer from './auth/auth.reducer';
+import reviewReducer from './review/review.reducer';
 
 
 const persistConfig = {
     key: 'root',
     storage,
-   // whitelist:['cart']
-   whitelist:[`authState`]
+   whitelist:[]
+   //whitelist:[`authState` , `bootcampState`]
 }
 
 const rootReducer = combineReducers({
     bootcampState: bootcampReducer,
-    authState: authReducer
+    authState: authReducer,
+    reviewState: reviewReducer
 })
 
 export default persistReducer(persistConfig , rootReducer);
